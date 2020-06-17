@@ -1,8 +1,8 @@
-struct _2SAT{
-	int scc[Ms], low[Ms], order[Ms], cnt, c, result[Ms/2];
-	bool visit[Ms];
+struct _2SAT {
+	int scc[ms], low[ms], order[ms], cnt, c, result[ms / 2];
+	bool visit[ms];
 	stack<int> s;
-	vector<int>adj[Ms];
+	vector<int>adj[ms];
 
 	void dfs(int now) {
 		visit[now] = true;
@@ -40,7 +40,7 @@ struct _2SAT{
 	void solve1(int n) { // 어떤걸로 가능한지 탐색
 		for (int i = 0; i < n; i++)result[i] = -1;
 
-		P p[Ms];
+		P p[ms];
 		for (int i = 0; i < n * 2; i++)p[i] = { scc[i],i };
 		sort(p, p + n * 2);
 
@@ -51,9 +51,11 @@ struct _2SAT{
 		for (int i = 0; i < n; i++)cout << result[i] << ' ';
 	}
 
-	void inp(int n,int m) {
+	int rev(int a) { return a % 2 ? a - 1 : a + 1; }
+
+	void inp(int n, int m) {
 		int a, b;
-		while (m--) {
+		for (int i = 0; i < n; i++) {
 			cin >> a >> b;
 			a = a < 0 ? -(a + 1) * 2 : a * 2 - 1;
 			b = b < 0 ? -(b + 1) * 2 : b * 2 - 1;
