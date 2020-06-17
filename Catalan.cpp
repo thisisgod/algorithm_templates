@@ -1,15 +1,3 @@
-#include<iostream>
-#include<vector>
-#include<queue>
-#include<algorithm>
-#include<stack>
-#include<map>
-#include<set>
-#include<math.h>
-#define ms 50
-using namespace std;
-typedef long long int ll;
-
 struct Catalan { // 소인수들을 관리할 BIT
 	struct Prime {
 		int mod, prime[ms * 2 + 1], primes[ms * 2 + 1], factor[ms * 2 + 1], pc;
